@@ -5,6 +5,7 @@ import com.blargh.AanP.client.place.HomePlace;
 import com.blargh.AanP.client.view.HomeView;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
+import com.google.gwt.place.shared.Place;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 
 public class HomeActivity extends AbstractActivity implements HomeView.Presenter {
@@ -24,5 +25,14 @@ public class HomeActivity extends AbstractActivity implements HomeView.Presenter
 	@Override
 	public String mayStop() {
 		return "Stopping...";
+	}
+
+	/**
+	 * Navigate to a new Place in the browser.
+	 * 
+	 * @param place
+	 */
+	public void goTo(Place place) {
+		client_factory.placeController().goTo(place);
 	}
 }
