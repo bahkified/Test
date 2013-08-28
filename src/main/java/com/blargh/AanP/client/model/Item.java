@@ -11,6 +11,8 @@ import com.google.gwt.user.client.Window;
 
 public class Item extends JavaScriptObject {
 	
+	// TODO: Item cache. Move data retrieval code to utility class
+	
 	public interface ItemCallback {
 		void onItemRetrieved(Item item);
 	}
@@ -44,10 +46,6 @@ public class Item extends JavaScriptObject {
 					if (response.getStatusCode() == 200) {
 						// Good response, received JSON data
 						Item item = JsonUtils.safeEval(response.getText());
-						Window.alert("Item: "
-								+ item.id() + "\n"
-								+ item.name());
-						//items.add(item);
 						
 						cb.onItemRetrieved(item);
 					} else {
@@ -82,3 +80,4 @@ icon_file_signature (string) – The icon file signature to be used with the ren
 game_types (list) – The game types where the item is usable.
 flags (list) – Additional item flags.
 restrictions (list) – Restrictions*/
+// List of strings? return as JsArray...

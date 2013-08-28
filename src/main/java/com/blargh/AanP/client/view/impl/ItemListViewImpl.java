@@ -5,7 +5,6 @@ import com.blargh.AanP.client.model.Items;
 import com.blargh.AanP.client.view.ItemListView;
 import com.blargh.AanP.client.widgets.ItemCell;
 import com.google.gwt.user.cellview.client.CellList;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.ScrollPanel;
@@ -48,7 +47,6 @@ public class ItemListViewImpl extends Composite implements ItemListView {
 	}
 
 	public void setItems(Items items) {
-		Window.alert("Number of items: " + items.size());
 		cell_list.setRowCount(20, true);
 		cell_list.setRowData(items.asList());
 	}

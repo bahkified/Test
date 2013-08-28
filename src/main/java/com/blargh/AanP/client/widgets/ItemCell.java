@@ -19,18 +19,31 @@ public class ItemCell extends AbstractCell<Item> {
 		sb.appendHtmlConstant(value.name());
 		sb.appendHtmlConstant("</td></tr>");
 		
-		sb.appendHtmlConstant("<tr><td>");
-		sb.appendHtmlConstant(value.type());
-		sb.appendHtmlConstant("</td></tr>");
+		sb.appendHtmlConstant("<tr></tr>");
 		
 		sb.appendHtmlConstant("<tr><td>");
-		sb.appendHtmlConstant(value.level());
+		sb.appendHtmlConstant("Type: " + value.type());
 		sb.appendHtmlConstant("</td></tr>");
+		
+		sb.appendHtmlConstant("<tr></tr>");
+		
+		sb.appendHtmlConstant("<tr><td>");
+		sb.appendHtmlConstant("Level: " + value.level());
+		sb.appendHtmlConstant("</td></tr>");
+		
+		sb.appendHtmlConstant("<tr></tr>");
+		
+		sb.appendHtmlConstant("<tr><td>");
+		sb.appendHtmlConstant("Rarity: " + value.rarity());
+		sb.appendHtmlConstant("</td></tr>");
+		
+		sb.appendHtmlConstant("<tr></tr>");
 		
 		sb.appendHtmlConstant("<tr><td>");
 		sb.appendHtmlConstant(value.description());
 		sb.appendHtmlConstant("</td></tr>");
 		
+		sb.appendHtmlConstant("</table>");
 	}
 	
 }

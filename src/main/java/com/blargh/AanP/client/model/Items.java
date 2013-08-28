@@ -16,7 +16,7 @@ import com.google.gwt.http.client.Response;
 import com.google.gwt.user.client.Window;
 
 public class Items implements Iterable<Item> {
-
+// TODO: move data retrieval code to utility class
 	private List<Item> items;
 	
 	public Items(List<Item> items) {
@@ -82,6 +82,7 @@ public class Items implements Iterable<Item> {
 								+ response.getStatusText());
 					}
 					
+					// TODO: paging
 					for (int i = 0; i < /*ids.length()*/20; i++) {
 						pending.add(items_cache.items().get(i));
 						Item.addItem(items_cache.items().get(i), 
@@ -90,10 +91,8 @@ public class Items implements Iterable<Item> {
 							public void onItemRetrieved(Item item) {
 								items_list.add(item);
 								pending.remove(pending.size() - 1);
-								Window.alert("Pending: " + pending.size());
+								
 								if (pending.isEmpty()) {
-									Window.alert("size = " + items_list.size());
-									
 									cache = new Items(items_list);
 									cb.onItemsRetrieved(cache);
 								}
